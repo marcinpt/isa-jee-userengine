@@ -9,6 +9,6 @@
 </head>
 <body>
 <h1>Welcome ${name}</h1>
-<#--text-->git add -A
+<#--text-->
 </body>
 </html>

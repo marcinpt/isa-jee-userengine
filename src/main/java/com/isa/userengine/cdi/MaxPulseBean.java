@@ -7,12 +7,12 @@ import com.isa.userengine.domain.User;
 public class MaxPulseBean {
 
 
-    public double pulseMaxMan(int age) {
-        return (202 - (0.55 * age));
+    public double getManMaxPulse(int age) {
+        return 202 - (0.55 * age);
     }
 
-    public double pulseMaxWoman(int age) {
-        return (216 * 1.09 * age);
+    public double getWomanPulse(int age) {
+        return 216 - (1.09 * age);
     }
 
 }

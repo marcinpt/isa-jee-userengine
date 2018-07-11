@@ -3,6 +3,7 @@ package com.isa.userengine.servlets;
 
 import com.isa.userengine.cdi.MaxPulseBean;
 import com.isa.userengine.dao.UsersRepositoryDao;
+import com.isa.userengine.domain.Gender;
 import com.isa.userengine.domain.User;
 
 import javax.ejb.EJB;
@@ -35,17 +36,27 @@ public class FindUserByIdServlet extends HttpServlet {
         Integer id = Integer.parseInt(idParam);
         User useById = usersRepositoryDao.getUserByld(id);
 
-        maxPulseBean.pulseMaxMan(55);
 
         PrintWriter writer = resp.getWriter();
 
         if (useById != null) {
             writer.println("Found user name is: " + useById.getName());
+
+            double pulse = 0D;
+
+            if (useById.getGender().equals(Gender.MAN)) {
+                pulse = maxPulseBean.getManMaxPulse(useById.getAge());
+            } else if (useById.getGender().equals(Gender.WOMAN)) {
+                pulse = maxPulseBean.getWomanPulse(useById.getAge());
+            }
+
+            if (pulse != 0D) {
+                writer.println("And max pulse is: " + pulse);
+            }
         } else {
-            writer.println("User not found");
+            writer.println("User not found.");
         }
 
-        User
 
     }
 }

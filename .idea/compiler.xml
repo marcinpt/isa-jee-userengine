@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="users-engine" />
         <module name="usersengine" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="usersengine" target="1.8" />
+      <module name="maven-archiver" target="1.5" />
+      <module name="users-engine" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
